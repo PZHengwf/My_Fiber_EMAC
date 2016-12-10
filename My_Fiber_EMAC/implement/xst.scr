@@ -1,0 +1,8 @@
+run
+-ifn xst.prj
+-ifmt mixed
+-ofn My_Fiber_EMAC_example_design
+-top My_Fiber_EMAC_example_design
+-p virtex5
+-iobuf yes
+-keep_hierarchy no

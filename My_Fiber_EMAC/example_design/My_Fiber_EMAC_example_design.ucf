@@ -1,0 +1,45 @@
+# The xc5vlx50tff1136-1 part is chosen for this example design.
+# This value should be modified to match your device.
+CONFIG PART = xc5vlx50tff665-1;
+ 
+##################################
+# BLOCK Level constraints
+##################################
+
+# EMAC0 Clocking
+## 125MHz clock input from BUFG
+#NET "CLK125" TNM_NET          = "clk_gtp";
+#TIMEGRP  "My_Fiber_EMAC_gtp_clk"            = "clk_gtp";
+#TIMESPEC "TS_My_Fiber_EMAC_gtp_clk"         = PERIOD "My_Fiber_EMAC_gtp_clk" 8 ns HIGH 50 %;
+
+
+ 
+##################################
+# EXAMPLE DESIGN Level constraints
+##################################
+
+NET "MGTCLK_N" TNM_NET = MGTCLK_N;
+TIMESPEC TS_MGTCLK_N = PERIOD "MGTCLK_N" 8 ns HIGH 50% INPUT_JITTER 500 ps;
+NET "MGTCLK_P" TNM_NET = MGTCLK_P;
+TIMESPEC TS_MGTCLK_P = PERIOD "MGTCLK_P" 8 ns HIGH 50% INPUT_JITTER 500 ps;
+
+
+# Place the transceiver components. Please alter to your chosen transceiver.
+INST "*clkingen" LOC = BUFDS_X0Y3;
+INST "*GTP_DUAL_1000X_inst?GTP_1000X?tile0_rocketio_wrapper_i?gtp_dual_i" LOC = "GTP_DUAL_X0Y3";
+INST "MGTCLK_N" LOC = "K3";
+INST "MGTCLK_P" LOC = "K4";
+
+NET "TXP_0" LOC = H2;
+NET "TXN_0" LOC = J2;
+NET "RXP_0" LOC = J1;
+NET "RXN_0" LOC = K1;
+
+NET "TXP_1" LOC = N2;
+NET "TXN_1" LOC = M2;
+NET "RXP_1" LOC = M1;
+NET "RXN_1" LOC = L1;
+
+
+
+NET "RESET"   LOC = Y10;

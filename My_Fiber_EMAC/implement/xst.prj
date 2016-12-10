@@ -1,0 +1,11 @@
+verilog work ../example_design/My_Fiber_EMAC.v
+verilog work ../example_design/physical/rocketio_wrapper_gtp.v
+verilog work ../example_design/physical/rocketio_wrapper_gtp_tile.v
+verilog work ../example_design/physical/gtp_dual_1000X.v
+verilog work ../example_design/My_Fiber_EMAC_block.v
+verilog work ../example_design/client/fifo/tx_client_fifo_8.v
+verilog work ../example_design/client/fifo/rx_client_fifo_8.v
+verilog work ../example_design/client/fifo/eth_fifo_8.v
+verilog work ../example_design/My_Fiber_EMAC_locallink.v
+verilog work ../example_design/client/address_swap_module_8.v
+verilog work ../example_design/My_Fiber_EMAC_example_design.v
